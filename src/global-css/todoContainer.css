@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+* {
+    box-sizing:border-box
+  }
+
+.TodoContainer {
+    background-color: rgb(50, 47, 63);
+    width: 300px;
+    border-radius: 15px;
+    padding: 5px;
+}
+
+.status {
+    display: flex;
+    border-radius: 30px;
+}
+
+.status_text p {
+    margin: 0;
+}
+
+.status_topic {
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    background-color: rgb(34, 32, 43);
+    border-radius: 8px;
+    color: white;
+    box-sizing: border-box;
+    padding: 10px;
+}
+.status_topic textarea{
+    width: 100%;
+    resize: none;
+    background-color: rgb(34, 32, 43);
+    outline: none;
+    border: none; 
+    font-family: "Special Elite", system-ui;
+    font-weight: 400;
+    color: white;
+}
+
+.status_subcontainer {
+    width: 100%;
+}
