@@ -1,19 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Special+Elite&display=swap');
+
 * {
-    box-sizing:border-box
-  }
+    box-sizing: border-box
+}
 
 .TodoContainer {
     background-color: rgb(50, 47, 63);
-    width: 300px;
+    width: fit-content;
+    min-width: 200px;
     border-radius: 15px;
     padding: 5px;
-    cursor: move;
 }
 
 .status {
     display: flex;
     border-radius: 30px;
+    cursor:move;
 }
 
 .status_text p {
@@ -24,22 +26,56 @@
     font-family: "Special Elite", system-ui;
     font-weight: 400;
     background-color: rgb(34, 32, 43);
+    height: auto;
     border-radius: 8px;
     color: white;
     box-sizing: border-box;
     padding: 10px;
 }
-.status_topic textarea{
+
+.status_topic textarea {
     width: 100%;
-    resize: none;
+    height: auto;
+    min-width: 200px;
+    min-height: 100px;
     background-color: rgb(34, 32, 43);
     outline: none;
-    border: none; 
+    border: none;
     font-family: "Special Elite", system-ui;
+    font-size: 20px;
     font-weight: 400;
     color: white;
+    display: flex;
+    flex-wrap: wrap;
+    line-height: 25px;;
+}
+
+.status_topic textarea::-webkit-scrollbar {
+    width: 7px;
+}
+.status_topic textarea::-webkit-resizer {
+    background: url("../../public/resize.png") center no-repeat;
+  }
+
+.status_topic textarea::-webkit-scrollbar-thumb {
+    background: rgb(15, 14, 18);
+    border-radius: 10px;
+}
+
+.status_topic textarea::-webkit-scrollbar-thumb:hover {
+    background: #000000;
 }
 
 .status_subcontainer {
+    width: 100%;
+}
+
+.status_button_container{
+    display: flex;
+}
+.status_types{
+    margin-right: auto;
+}
+.status_types{
     width: 100%;
 }
