@@ -1,5 +1,10 @@
 import "../global-css/navbar.css"
+import { useState } from "react";
 function Navbar() {
+
+async function clickhandler(){
+    localStorage.setItem('todo',Number(localStorage.getItem('todo')) + 1)
+}
   return (
     <div className="navbar">
         <div className="logo">
@@ -7,7 +12,7 @@ function Navbar() {
         </div>
         <div className="navbar_links">
             <a href="/">Home</a>
-            <a href="/">Clear</a>
+            <a href="/" onClick={()=>{clickhandler()}}>Clear</a>
         </div>
     </div>
   );

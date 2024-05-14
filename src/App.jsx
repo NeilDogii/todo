@@ -4,20 +4,12 @@ import './App.css';
 import TodoContainer from './components/TodoContainers.jsx';
 import Navbar from './components/navbar.jsx'; 
 //import { BrowserRouter, Routes, Route } from "react-router-dom";
-const file = require("./todo.json");
-
-// file.key = "new value";
-    
-// fs.writeFile("./todo.json", JSON.stringify(file), function writeJSON(err) {
-//   if (err) return console.log(err);
-//   console.log(JSON.stringify(file));
-// });
 
 function App() {
   return (
     <>
     <Navbar />
-    <TodoContainer todo={file.todo}/>
+    <TodoContainer todo={1}/>
     </>
   );
 }
