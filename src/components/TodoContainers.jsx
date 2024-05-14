@@ -2,7 +2,7 @@ import "../global-css/todoContainer.css";
 import Draggable from 'react-draggable'
 import { useState } from "react";
 
-function TodoContainer() {
+function TodoContainer(props) {
   const [status, setStatus] = useState("Pending");
   const [disabled, setDisabled] = useState(true)
 
@@ -11,7 +11,7 @@ function TodoContainer() {
     setDisabled(!disabled);
   }
   return (
-    <div className="TodoMain">
+    <div className={`TodoMain_${props.todo}`} >
       <Draggable handle=".status" bounds={{ top: 10, left: 0 }}>
           <div className="TodoContainer" >
             <div className="status">
