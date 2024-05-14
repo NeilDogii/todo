@@ -71,11 +71,75 @@
 }
 
 .status_button_container{
+    margin-top:9px;
     display: flex;
 }
 .status_types{
     margin-right: auto;
 }
+
+.todoclose:hover{
+    background-color: rgb(194, 11, 11);
+    cursor:pointer;
+}
+.todoclose{
+    height: 40px;
+    width: 40px;
+    border-radius: 10px;
+    padding-left:-3px;
+    background: url("../../public/cross.svg") center no-repeat, red;
+}
+
 .status_types{
     width: 100%;
+    flex:1;
+    background-color: white;
+    border-radius: 10px;
+    margin-left: 2px;
+    margin-right: 10px;
+    display: flex;
+    cursor: pointer;
+    user-select: none;
 }
+.status_types p {
+    margin: 0px;
+    align-self: center;
+    padding-left: 5px;
+}
+
+.options{
+    /* background-color: white; */
+    position:absolute;
+    border-radius: 10px;
+    margin-top: 5px;
+    width: 300px;
+}
+.options p{
+    margin: 5px;
+}
+.option{
+    background-color: white;
+    padding: 1px;
+    transition: transform .2s;
+}
+#completed{
+    border-radius: 10px 10px 0px 0px;
+}
+#paused{
+    border-radius: 0px 0px 10px 10px;
+}
+.option:hover{
+    background-color: rgb(240, 240, 240);
+    cursor:pointer;
+    /* width: 350px; */
+    transform: scale(1.1);
+    border-radius: 10px;
+    box-shadow: #000000 0px 0px 10px;
+}
+
+div[disabled]
+{
+  pointer-events: none;   
+  opacity: 0;
+}
+

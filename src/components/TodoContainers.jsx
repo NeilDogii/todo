@@ -1,44 +1,60 @@
 import "../global-css/todoContainer.css";
 import Draggable from 'react-draggable'
+import { useState } from "react";
+
 function TodoContainer() {
+  const [status, setStatus] = useState("Pending");
+  const [disabled, setDisabled] = useState(true)
+
+  async function handleClick(s) {
+    setStatus(s);
+    setDisabled(!disabled);
+  }
   return (
-    <>
+    <div className="TodoMain">
       <Draggable handle=".status" bounds={{ top: 10, left: 0 }}>
-        <div className="TodoContainer" id="TodoMain">
-          <div className="status">
-            <div className="status_logo">
-              <img src="./done.svg" alt="checked" />
+          <div className="TodoContainer" >
+            <div className="status">
+              <div className="status_logo">
+                <img src="./done.svg" alt="checked" />
+              </div>
+              <div className="status_text">
+                <p>{status}</p>
+              </div>
             </div>
-            <div className="status_text">
-              <p>Completed</p>
+            <div className="status_subcontainer">
+              <div className="status_topic">
+                <textarea placeholder="topic..." />
+              </div>
             </div>
+            <div className="status_button_container">
+              <div className="status_types" onClick={() => setDisabled(!disabled)}>
+                <p>Change status</p>
+              </div>
+              <div className="todoclose">
+                {/* <img src="./cross.svg" alt="close" /> */}
+              </div>
+            </div>
+            <div className="options" disabled={disabled}>
+                <div className="option" id="completed" onClick={() => handleClick("Completed")}>
+                  <p>Completed</p>
+                </div>
+                <div className="option" id="inprogress" onClick={() => handleClick("In-Progress")}>
+                  <p>In-progress</p>
+                </div>
+                <div className="option" id="pending" onClick={() => handleClick("Pending")}>
+                  <p>Pending</p>
+                </div>
+                <div className="option" id="urgent" onClick={() => handleClick("Urgent")}>
+                  <p>Urgent</p>
+                </div>
+                <div className="option" id="paused" onClick={() => handleClick("Paused")}>
+                  <p>Paused</p>
+                </div>
+              </div>
           </div>
-          <div className="status_subcontainer">
-            <div className="status_topic">
-              <textarea placeholder="topic..." />
-            </div>
-          </div>
-          <div className="status_button_container">
-            <div className="status_types">
-              <select>
-
-                <option value="fruit">Fruit</option>
-
-                <option value="vegetable">Vegetable</option>
-
-                <option value="meat">Meat</option>
-
-              </select>
-            </div>
-            <div className="todoclose">
-              <button>
-                <img src="./cross.svg" alt="close" />
-              </button>
-            </div>
-          </div>
-        </div>
       </Draggable>
-    </>
+    </div>
   );
 }
 
