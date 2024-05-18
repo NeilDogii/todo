@@ -1,18 +1,15 @@
 import "../global-css/navbar.css"
-import { useState } from "react";
-function Navbar() {
 
-async function clickhandler(){
-    localStorage.setItem('todo',Number(localStorage.getItem('todo')) + 1)
-}
+function Navbar() {
+const add_todo = new Event("add_todo");
   return (
     <div className="navbar">
-        <div className="logo">
+        <div className="logo" onClick={() => window.dispatchEvent(add_todo)}>
             <img src="./todo.png" alt="logo"/>
         </div>
         <div className="navbar_links">
-            <a href="/">Home</a>
-            <a href="/" onClick={()=>{clickhandler()}}>Clear</a>
+            <div className="nav_btn" onClick={() => window.dispatchEvent(add_todo)}> add todo
+            </div>
         </div>
     </div>
   );

@@ -1,15 +1,29 @@
-//import logo from './logo.svg';
 import './App.css';
-//import Footer from './foot.jsx';
 import TodoContainer from './components/TodoContainers.jsx';
 import Navbar from './components/navbar.jsx'; 
 //import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useEffect,useState } from 'react';
 
 function App() {
+  const [todoList,setTodoList] = useState([Number(localStorage.getItem('todo'))]);
+  
+  useEffect(() => {
+    window.addEventListener('add_todo', event => {
+      localStorage.setItem('todo',Number(localStorage.getItem('todo')) + 1)
+      setTodoList(t => t.concat(Number(localStorage.getItem('todo'))));
+    });
+    window.addEventListener('deleteTodo', event => {
+      document.getElementById("TodoMain_" + event.detail.ID).remove()
+      //setTodoList(t => t.filter((i) => i !== event.detail.ID));
+    })
+  }, []);
+
   return (
     <>
-    <Navbar />
-    <TodoContainer todo={1}/>
+    <Navbar/>
+    <div className="todoListHolder">
+    {todoList.map(e => <TodoContainer todo={e} />)}
+    </div>
     </>
   );
 }

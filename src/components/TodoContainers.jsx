@@ -5,14 +5,15 @@ import { useState } from "react";
 function TodoContainer(props) {
   const [status, setStatus] = useState("Pending");
   const [disabled, setDisabled] = useState(true)
+  const event = new CustomEvent("deleteTodo", {detail: {ID: props.todo}});
 
   async function handleClick(s) {
     setStatus(s);
     setDisabled(!disabled);
   }
   return (
-    <div className={`TodoMain_${props.todo}`} >
-      <Draggable handle=".status" bounds={{ top: 10, left: 0 }}>
+    <div id={`TodoMain_${props.todo}`} >
+      <Draggable handle=".status" bounds={{ top: 10}}>
           <div className="TodoContainer" >
             <div className="status">
               <div className="status_logo">
@@ -31,7 +32,7 @@ function TodoContainer(props) {
               <div className="status_types" onClick={() => setDisabled(!disabled)}>
                 <p>Change status</p>
               </div>
-              <div className="todoclose">
+              <div className="todoclose" onClick={() => window.dispatchEvent(event)}>
                 {/* <img src="./cross.svg" alt="close" /> */}
               </div>
             </div>
