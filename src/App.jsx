@@ -6,6 +6,12 @@ import { useEffect,useState } from 'react';
 
 function App() {
   const [todoList,setTodoList] = useState([Number(localStorage.getItem('todo'))]);
+  let jsondata = {
+    "test1": "test1", 
+    "test2": "test2"
+  }
+  localStorage.setItem('todo_data',JSON.stringify(jsondata))
+  console.log(JSON.parse(localStorage.getItem('todo_data')).test1)
   
   useEffect(() => {
     window.addEventListener('add_todo', event => {
