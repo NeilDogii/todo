@@ -1,160 +1,157 @@
-@import url('https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Gloria+Hallelujah&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap');
-:root{
-    /* --font: "DM Mono", monospace; */
-    --font: "Balsamiq Sans", sans-serif;
-
+@import url("https://fonts.googleapis.com/css2?family=Architects+Daughter&family=DM+Mono:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&family=Gloria+Hallelujah&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap");
+:root {
+  /* --font: "DM Mono", monospace; */
+  --font: "Balsamiq Sans", sans-serif;
 }
 * {
-    box-sizing: border-box
+  box-sizing: border-box;
 }
 
 .TodoContainer {
-    background-color: rgb(50, 47, 63);
-    width: fit-content;
-    min-width: 200px;
-    border-radius: 15px;
-    padding: 5px;
-    position:fixed;
+  background-color: rgb(50, 47, 63);
+  width: fit-content;
+  min-width: 200px;
+  border-radius: 15px;
+  padding: 5px;
+  position: fixed;
 }
 
 .status {
-    display: flex;
-    border-radius: 30px;
-    cursor:move;
+  display: flex;
+  border-radius: 30px;
+  cursor: move;
 }
 
 .status_text p {
-    margin: 0;
-    color: white;
-    font-family: var(--font);
-    font-weight: 400;
-    padding-top:3px;
-    padding-left: 5px;
+  margin: 0;
+  color: white;
+  font-family: var(--font);
+  font-weight: 400;
+  padding-top: 3px;
+  padding-left: 5px;
 }
 
 .status_topic {
-    font-family: var(--font);
-    font-weight: 400;
-    background-color: rgb(34, 32, 43);
-    height: auto;
-    border-radius: 8px;
-    color: white;
-    box-sizing: border-box;
-    padding: 10px;
+  font-family: var(--font);
+  font-weight: 400;
+  background-color: rgb(34, 32, 43);
+  height: auto;
+  border-radius: 8px;
+  color: white;
+  box-sizing: border-box;
+  padding: 10px;
 }
 
 .status_topic textarea {
-    width: 100%;
-    height: auto;
-    min-width: 200px;
-    min-height: 100px;
-    background-color: rgb(34, 32, 43);
-    outline: none;
-    border: none;
-    font-family: var(--font);
-    font-size: 20px;
-    font-weight: 400;
-    color: white;
-    display: flex;
-    flex-wrap: wrap;
-    line-height: 25px;;
+  width: 100%;
+  height: auto;
+  min-width: 200px;
+  min-height: 100px;
+  background-color: rgb(34, 32, 43);
+  outline: none;
+  border: none;
+  font-family: var(--font);
+  font-size: 20px;
+  font-weight: 400;
+  color: white;
+  display: flex;
+  flex-wrap: wrap;
+  line-height: 25px;
 }
 
 .status_topic textarea::-webkit-scrollbar {
-    width: 7px;
+  width: 7px;
 }
 .status_topic textarea::-webkit-resizer {
-    background: url("../../public/resize.png") center no-repeat;
-  }
+  background: url("../../public/resize.png") center no-repeat;
+}
 
 .status_topic textarea::-webkit-scrollbar-thumb {
-    background: rgb(15, 14, 18);
-    border-radius: 10px;
+  background: rgb(15, 14, 18);
+  border-radius: 10px;
 }
 
 .status_topic textarea::-webkit-scrollbar-thumb:hover {
-    background: #000000;
+  background: #000000;
 }
 
 .status_subcontainer {
-    width: 100%;
+  width: 100%;
 }
 
-.status_button_container{
-    margin-top:9px;
-    display: flex;
+.status_button_container {
+  margin-top: 9px;
+  display: flex;
 }
-.status_types{
-    margin-right: auto;
-}
-
-.todoclose:hover{
-    background-color: rgb(194, 11, 11);
-    cursor:pointer;
-}
-.todoclose{
-    height: 40px;
-    width: 40px;
-    border-radius: 10px;
-    padding-left:-3px;
-    background: url("../../public/cross.svg") center no-repeat, red;
+.status_types {
+  margin-right: auto;
 }
 
-.status_types{
-    width: 100%;
-    flex:1;
-    background-color: white;
-    border-radius: 10px;
-    margin-left: 2px;
-    margin-right: 10px;
-    display: flex;
-    cursor: pointer;
-    user-select: none;
+.todoclose:hover {
+  background-color: rgb(194, 11, 11);
+  cursor: pointer;
+}
+.todoclose {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  padding-left: -3px;
+  background: url("../../public/cross.svg") center no-repeat, red;
+}
+
+.status_types {
+  width: 100%;
+  flex: 1;
+  background-color: white;
+  border-radius: 10px;
+  margin-left: 2px;
+  margin-right: 10px;
+  display: flex;
+  cursor: pointer;
+  user-select: none;
 }
 .status_types p {
-    margin: 0px;
-    align-self: center;
-    padding-left: 5px;
-    font-family: var(--font);
-    font-weight: 400;
+  margin: 0px;
+  align-self: center;
+  padding-left: 5px;
+  font-family: var(--font);
+  font-weight: 400;
 }
 
-.options{
-    font-family: var(--font);
-    font-weight: 400;
-    /* background-color: white; */
-    position:absolute;
-    border-radius: 10px;
-    margin-top: 5px;
-    width: 300px;
+.options {
+  font-family: var(--font);
+  font-weight: 400;
+  /* background-color: white; */
+  position: absolute;
+  border-radius: 10px;
+  margin-top: 5px;
+  width: 300px;
 }
-.options p{
-    margin: 5px;
+.options p {
+  margin: 5px;
 }
-.option{
-    background-color: white;
-    padding: 1px;
-    transition: transform .2s;
+.option {
+  background-color: white;
+  padding: 1px;
+  transition: transform 0.2s;
 }
-#completed{
-    border-radius: 10px 10px 0px 0px;
+#completed {
+  border-radius: 10px 10px 0px 0px;
 }
-#paused{
-    border-radius: 0px 0px 10px 10px;
+#paused {
+  border-radius: 0px 0px 10px 10px;
 }
-.option:hover{
-    background-color: rgb(240, 240, 240);
-    cursor:pointer;
-    /* width: 350px; */
-    transform: scale(1.1);
-    border-radius: 10px;
-    box-shadow: #000000 0px 0px 10px;
+.option:hover {
+  background-color: rgb(240, 240, 240);
+  cursor: pointer;
+  /* width: 350px; */
+  transform: scale(1.1);
+  border-radius: 10px;
+  box-shadow: #000000 0px 0px 10px;
 }
 
-div[disabled]
-{
-  pointer-events: none;   
+div[disabled] {
+  pointer-events: none;
   opacity: 0;
 }
-
