@@ -1,15 +1,18 @@
 import "./App.css";
 import TodoContainer from "./components/TodoContainers.jsx";
 import Navbar from "./components/navbar.jsx";
-//import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { useEffect, useState } from "react";
 
 function App() {
   const [todoData, setTodoData] = useState(
     JSON.parse(localStorage.getItem("todo_data"))
   );
+  if(todoData === null){
+    localStorage.setItem("todo_data", JSON.stringify([]));
+    setTodoData([]);
+  }
   useEffect(() => {
-    window.addEventListener("add_todo", (event) => {
+    window.addEventListener("add_todo", () => {
       let newdata = {
         message: "",
         status: "pending",
